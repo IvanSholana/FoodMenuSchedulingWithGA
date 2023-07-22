@@ -82,8 +82,6 @@ def hitung_fitness(gen):
 
 def geneticAlgo(population, generation, mutation_probability):
     generate_population = [initialize_chromosome(30) for _ in range(population)]
-    prev_best_fitness = None
-    unchanged_count = 0
 
     for gen in range(generation):
         fitness_scores = [hitung_fitness(chrom) for chrom in generate_population]
