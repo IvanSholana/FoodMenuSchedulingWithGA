@@ -90,18 +90,6 @@ def geneticAlgo(population, generation, mutation_probability):
         best_fitness = max(fitness_scores)
         print(f"Generasi {gen + 1}, Fitness Terbaik: {best_fitness}")
 
-        # Cek apakah nilai fitness stagnan
-        if best_fitness == prev_best_fitness:
-            unchanged_count += 1
-        else:
-            unchanged_count = 0
-
-        if unchanged_count >= 5:
-            print("Nilai fitness stagnan. Algoritma berhenti.")
-            break
-
-        prev_best_fitness = best_fitness
-
         # Ambil 10% kromosom dengan nilai fitness tertinggi sebagai induk
         num_parents = int(population * 0.1)
         selected_parents = sorted(
